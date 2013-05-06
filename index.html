@@ -1,0 +1,408 @@
+<!DOCTYPE HTML>
+<HTML> 
+<HEAD> 
+<TITLE>U.S. Department of Labor -- The Department of Labor Developer Community</TITLE>
+<META NAME="keywords" CONTENT="Department of Labor, DOL, Secretary of Labor" />
+<!-- begin dol-styles.shtm -->
+<link rel="shortcut icon" href="http://www.dol.gov/favicon.ico" type="image/x-icon">
+<link rel="icon" href="http://www.dol.gov/favicon.ico" type="image/x-icon">
+<link href="http://www.dol.gov/dol.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="http://developer.dol.gov/api.css" TYPE="text/css" />
+<link href="http://webapps.dol.gov/FSPublic/Content/W_Helpful.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+caption {text-align:left; font-size:80%}
+table{margin-left:12px;}
+
+
+-->
+</style>
+
+<!-- end dol-styles.shtm -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+<script type="text/javascript" src="prettify.js"></script>
+<script language="JavaScript" type="text/javascript">
+
+	jQuery(document).ready(function(){
+
+		// This line of code makes code pretty to look at and understand.
+		window.prettyPrint && prettyPrint()
+	
+	});
+	
+
+
+</script>
+<!--start include header-dest-redesign3.shtm -->
+<script src="http://webapps.dol.gov/FSPublic/Scripts/W_Helpful.js" type="text/javascript"></script>
+<script type="text/javascript">
+		$(document).ready(function() {
+			W_Helpful.init('#fbcontent');
+		});
+</script> 
+</HEAD> 
+<BODY> 
+<div id="Main">
+	<!--Header Start -->
+    <a href="#pagecontent" class="skipster">Skip to page content</a>
+
+<div id="Header">
+    <div id="Banner">
+        <p class="banner"><a href="http://www.dol.gov">United States Department of Labor</a></p>
+    </div>
+		<div id="RightColumn"><table><tr><td valign="bottom">
+		
+			</td><td>
+            
+  
+ 
+
+ 
+            
+            
+          </td></tr>
+		  <tr><td colspan="2">
+			<!--<div id="Nav" class="navlinks">
+				<a href="http://www.dol.gov/dol/siteindex.htm">A to Z</a>&nbsp;|&nbsp;
+				<a href="http://www.dol.gov/dol/findit.htm">Site Map</a>&nbsp;|&nbsp;
+				<a href="http://webapps.dol.gov/dolfaq/dolfaq.asp">FAQs</a>&nbsp;|&nbsp;
+
+				<a href="http://webapps.dol.gov/libraryforms">Forms</a>&nbsp;|&nbsp;
+				<a href="http://www.dol.gov/dol/aboutdol/main.htm">About DOL</a>&nbsp;|&nbsp; 
+				<a href="http://www.dol.gov/dol/contact">Contact Us</a>&nbsp;|&nbsp;
+                		<a href="http://www.dol.gov/dol/topic/Spanish-speakingTopic.htm">Espa&#241;ol</a>
+			</div>-->
+
+			</td></tr></table>
+		</div>
+	</div>
+    
+	<!--Header End -->
+
+	<!--Body Start -->
+	<div id="Body">
+		<div id="UtilityBar" class="tools">
+			<div class="utilitybarleft"><div id="agencyname">&nbsp;</div></div>
+
+			<!-- This is where the E-mail This page use to be -->
+			<div class="utilitybarright">
+				<div id="fbcontent" style="float:right"></div>			
+			</div>
+		</div>
+		<div class="crumb-links"><!-- begin crumb-nonav-auto.shtm -->
+<TABLE BORDER="0" CELLSPACING="0" CELLPADDING="0">
+  <TR>
+    <TD VALIGN="middle" ALIGN="LEFT" height="7" style="padding-left:2px"><span class="crumb-links">
+      <a href="http://www.dol.gov">DOL Home</a> &gt; <a href="http://www.dol.gov/open/">OPEN</a> &gt; <a href="http://developer.dol.gov">Developer Community</a> &gt; iOS DOL Data SDK Sample
+      </span> </td>
+
+  </tr>
+</table>
+<!-- end crumb-nonav-auto.shtm --></div>
+		<div id="content" >
+			<div id="pagecontent" style="width:768px;font-size:0;line-height:0;"></div>
+
+<!--end include header-dest-redesign3.shtm -->
+<!-- START CONTENT HERE  *************************************************** -->
+
+<h1>iOS DOL Data SDK Sample</h1>
+
+<h2>Overview</h2>
+<p>
+This sample will provide the steps to create a simple iOS app that can consume DOL Data. Following these steps in order will allow your app to operate correctly. <a href="/Samples/opa.DolData.SDK.Example.Iphone.zip">Download this project</a><!-- | 
+<a href="/Samples/opa.DolData.SDK.V2.Example.Iphone.zip">Download project for Service Operation.</a> --><br>
+</p>
+
+<p>You can also <a href="http://www.dol.gov/cgi-bin/leave-dol.asp?exiturl=https://github.com/USDepartmentofLabor/StrategyTrackeriPad&exitTitle=GitHub&fedpage=no">download</a> a sample application that uses non-DOL APIs owned by other federal government agencies.</p>
+
+<h2>Create a New Project</h2>
+<p>
+From the file menu in Xcode select New -> New Project.<br><br>
+<img alt="Create New Project in Xcode" src="images/1.png" /><br><br>
+
+Choose a template for your project. For this example we choose <strong>Master-Detail Application</strong>.<br>
+<br>
+<img alt="Select Template for Navigation based application" src="images/newiosproject.png" /><br><br>
+
+Provide a <strong>Product Name</strong> and <strong>Company Identifier</strong> and complete the New Project wizard.<br>
+<br>
+<img alt="Provide Product Name and Complete Wizard" src="images/Newiosproject2.png" /><br><br>
+</p>
+
+<h2>Add Dependencies</h2>
+<p>
+The DOL Data SDK has some library dependencies we must add to the project. From the left pane choose the project (top level in the list), then from the center pane select the target. From the right pane choose the <strong>Build Phases</strong> tab.<br>
+<br>
+<img alt="Go to Build Phases and library dependencies" src="images/4.png" WIDTH="95%" /><br><br>
+
+Expand the <strong>Link Binary with Libraries</strong> section. Click the + button to add the required frameworks. From the list that pops up choose:
+<ul>
+<li>libz.dylib</li>
+<li>MobileCoreServices.framework</li>
+<li>CFNetwork.framework</li>
+<li>SystemConfiguration.framework</li>
+</ul>
+Tip: you can hold down the Command key to select multiple files.<br><br>
+<img alt="Required Libraries are libz.dylib,MobileCoreServices.framework,CFNetwork.framework,SystemConfiguration.framework" src="images/ioslibraries.png" /><br><br>
+</p>
+
+<h2>Add SDK to Project</h2>
+<p>
+Add the SDK to your project. You can get it by either extracting the <a href="/sdks/iOS_DOLDataSDK.zip">zipped SDK folder</a> or by grabbing the <a href="http://www.dol.gov/cgi-bin/leave-dol.asp?exiturl=https://github.com/USDepartmentofLabor/DOLDataSDK-iOS&exitTitle=GitHub&fedpage=no">Git repository</a>. and drag-and-drop the <strong>DOLDataSDK</strong> folder to you project root (the first item on the left pane).<br><br>
+<img alt="Add SDK to your project" src="images/6.png" /><br><br>
+
+From the option screen that pops up choose 'Copy items into destinations group folder' and 'Create groups for any added folders'.<br><br>
+<img alt="Copy Items" src="images/7.png" /><br><br>
+
+
+Test that all the steps above have been done correctly by building the application. From the product menu, select Product -> Build.<br><br>
+<img alt="Build Project" src="images/8.png" /><br><br>
+
+The status area at the top center should display that the build succeeded with no issues.<br><br>
+<img alt="Build Successful" src="images/9.png" /><br><br>
+</p>
+
+<h2>Locate Dataset Path</h2>
+<p>
+Each Dataset has a <strong>Dataset Location</strong> path that gives the URL that will be needed for the data request. This address is circled in red. (http://api.dol.gov/V1/Compliance/WHD)<br><br>
+<img alt="Locate Dataset Path for DOl API Dataset Sample please use http://api.dol.gov/V1/Compliance/WHD" src="images/WHDDataSource.png" /><br><br>
+
+<!-- For the DOL Service Operation sample please use http://api.dol.gov/V1/SummerJobs<br><br>
+<img alt="Locate Dataset Location path from Dataset, for Summer Job Plus Sample please use http://api.dol.gov/V1/SummerJobs " src="images/Samples/NetV2/ServicePath.png" />
+<br><br/>-->
+
+The data request will also need the location of the table you are pulling data from. The tables are listed under their datasets. This table's name is circled in red.<br><br>
+<img alt="Table Name" src="images/WHDFullTable.png" /><br><br>
+</p>
+
+
+<h2>Create the Master View Controller</h2>
+<p>
+Open MasterViewController.h.
+<ul>
+<li>We must modify the class so that it can respond to the <strong>GOVDataRequest</strong> delegate methods. Do this by adding the <strong>&lt;GOVDataRequestDelegate&gt;</strong> protocol to the class.</li>
+<li>Add a <strong>NSArray</strong> ivar to store the results (*arrayOfResults).</li>
+<li>Add a <strong>GOVDataRequest</strong> ivar. This is how we will make requests to the API.</li>
+<li>Create properties for both ivars.</li>
+</ul>
+<pre class="prettyprint">//	MasterViewController.h
+//	SDK-Sample
+//
+ 
+#import <UIKit/UIKit.h>
+#import "GOVDataRequest.h"
+ 
+@interface MasterViewController : UITableViewController&lt;GOVDataRequestDelegate&gt; {
+ 
+	// We will store the results here
+	NSArray *arrayOfResults;
+    NSDictionary *dictionaryOfResults;
+ 
+	// API Request object
+	GOVDataRequest *dataRequest;
+}
+ 
+@property(nonatomic, retain)NSArray *arrayOfResults;
+@property(nonatomic, retain)GOVDataRequest *dataRequest;
+@property (nonatomic, retain)NSDictionary *dictionaryOfResults;
+
+
+-(void)govDataRequest:(GOVDataRequest *)request didCompleteWithError:(NSString *)error;
+-(void)govDataRequest:(GOVDataRequest *)request didCompleteWithResults:(NSArray *)resultsArray;
+-(void)govDataRequest:(GOVDataRequest *)request didCompleteWithDictionaryResults:(NSArray *)resultsDictionary;
+ 
+@end</pre><br><br>
+<p>
+Open MasterViewController.m. Add <strong>#define</strong> constants for your <strong>API Key</strong>, <strong>Secret</strong> and <strong>Host</strong>. In a real production application, you may choose to store this information elsewhere (keychain, plist, etc).<br>
+</p><br>
+<pre class="prettyprint">#import "MasterViewController.h"
+ 
+//Set API key information
+#define API_KEY @"YOUR API KEY"
+#define API_SECRET @"YOUR KEY SECRET"
+#define API_HOST @"http://api.dol.gov"
+#define API_URL @"/V1"</pre><br><br>
+
+
+<p>Synthesize the two ivars we created earlier.</p><br>
+<pre class="prettyprint">@implementation MasterViewController
+@synthesize dataRequest, arrayOfResults, dictionaryOfResults;</pre><br><br>
+<p>
+In this example we make the API call as soon as the app launches.</p>
+<ul>
+<li>Create a <strong>GOVDataContext</strong> object. This object stores the API key information and URL.</li>
+<li>Alloc init the <strong>GOVDataRequest</strong> ivar with the context object as parameter.</li>
+<li>Set self as the delegate. This ensures that this class' <strong>GOVDataRequestDelegate</strong> methods are called when the API call completes.</li>
+<li>Create an <strong>NSDictionary</strong> and store the arguments you want to send with the API call</li>
+<li>Call <strong>callAPIMethod:withArguments:</strong>, providing the <strong>Dataset Location</strong> path, table name, and arguments dictionary. This will execute asyncronously.</li>
+</ul>
+
+<pre class="prettyprint">-(void)viewDidLoad
+{
+	[super viewDidLoad];
+ 
+	self.title = @"SDK Sample";
+ 
+	//Create Context object
+	//This object will store the URL and authorization information
+	GOVDataContext *context = [[GOVDataContext alloc] initWithAPIKey:API_KEY Host:API_HOST SharedSecret:API_SECRET APIURL:API_URL];
+ 
+	//Instantiate a new request
+	dataRequest = [[GOVDataRequest alloc] initWithContext:context];
+	//Set self as a delegate
+	dataRequest.delegate = self;
+	
+	//Define the method that will be called
+	NSString *method = @"Compliance/WHD/full";
+ 
+	//Create a dictionary of arguments
+	//Top 20 records; Selected 3 columns.
+	NSDictionary *arguments = [NSDictionary dictionaryWithObjectsAndKeys:@"20", @"top", @"trade_nm,city_nm,st_cd", @"select", nil];
+ 
+	//Set the timeout.  Set this higher for long-loading APIs
+	int timeOut = 20;
+
+	//Call API method with the arguments
+	//didCompleteWithResults or didCompleteWithError delegate method will be called
+	//when results or errors are returned
+	[dataRequest callAPIMethod:method withArguments:arguments andTimeOut:timeOut];
+}</pre><br><br>
+
+<p>
+Implement the <strong>GOVDataRequestDelegate</strong> methods <strong>didCompleteWithResults</strong> and <strong>didCompleteWithDictionaryResults</strong>:</p>
+<ul>
+<li>Store results to the <strong>NSArray</strong> ivar. We need to retain the array because it is autoreleased. Otherwise the app will crash when the table refreshes.</li>
+<li>Reload the table view.</li>
+</ul>
+
+<pre class="prettyprint">#pragma mark GOVDataRequest delegate methods
+-(void)govDataRequest:(GOVDataRequest *)request didCompleteWithResults:(NSArray *)resultsArray {
+	NSLog(@"Got results");
+ 
+	//Save results in our local array instance
+	self.arrayOfResults = [resultsArray retain];
+ 
+	//Refresh the tableView
+	[self.tableView reloadData];
+}
+
+-(void)govDataRequest:(GOVDataRequest *)request didCompleteWithDictionaryResults:(NSDictionary *)resultsDictionary {
+    
+    
+    NSLog(@"Got a Dictionary");
+	//Save results in our local dictionary instance
+	self.dictionaryOfResults = [resultsDictionary retain];
+    //    NSLog(@"%@", self.dictionaryOfResults);
+	//Refresh the tableView
+	//[self.tableView reloadData];
+}</pre><br><br>
+
+
+Implement the <strong>govDataRequestDelegate</strong> method <strong>didCompleteWithError:</strong>. In this example we chose to just show the error in an <strong>UIAlertView</strong>.</p><br>
+<pre class="prettyprint">-(void)GOVDataRequest:(GOVDataRequest *)request didCompleteWithError:(NSString *)error {
+	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:error delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+ 
+	[alert show];
+	[alert release];
+}</pre><br><p>
+
+Complete the table view requirements:</p>
+<ul>
+<li>Return the count for the results array in the <strong>numberOfRowsInSection:</strong> method</li>
+<li>In the <strong>cellForRowAtIndexPath:</strong> method create an <strong>NSDictionary</strong> variable pointing to the object in the results <strong>NSArray</strong> whose index is equal to the row we are rendering.</li>
+<li>Now we can set the cells text labels to any property of the <strong>NSDictionary</strong>.</li>
+<li>The <strong>NSDictionary</strong> keys will be equal to the table column names.</li>
+</ul>
+
+<pre class="prettyprint">//Customize the number of sections in the table view.
+-(NSInteger)numberofSectionsInTableView:(UITableView *)tableView
+{
+	return 1;
+}
+ 
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+	return [self.arrayOfResults count];
+}
+ 
+//Customize the appearance of table view cells.
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	static NSString *CellIdentifier = @"Cell";
+ 
+	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+	if (cell == nil) {
+		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
+	}
+ 
+	//arrayOfResults is an array of NSDictionaries
+	//Get the record
+	NSDictionary *result = (NSDictionary *)[arrayOfResults objectAtIndex:indexPath.row];
+ 
+	// Configure the cell.
+ 
+	//Set the cell text to trade_nm
+	cell.textLabel.text = (NSString *)[result objectForKey:@"trade_nm"];
+	//Set the cell small text to "city, state"
+	cell.detailTextLabel.text = [NSString stringWithFormat:@"%@, %@", (NSString *)[result objectForKey:@"city_nm"], (NSString *)[result objectForKey:@"st_cd"]];
+ 
+	return cell;
+}</pre><br><p>
+
+
+<p>
+
+Release any objects in the <strong>dealloc</strong> method.</p><br>
+<pre class="prettyprint">-(void)dealloc
+{
+	[arrayOfResults release];
+	[dictionaryOfResults release];
+	[dataRequest release];
+	[super dealloc];
+}</pre><br><br>
+
+
+<h2>View DOL Data</h2>
+<p>
+Build and run the application, and you should see something like the following:</p><br>
+<p>For DOL API datasets : <br /><br />
+<img alt="Completed App" src="images/18.png" /><br><br>
+
+
+
+<!-- END CONTENT HERE  *************************************************** -->
+<!---original location of this file: "/includes/" -->
+
+</div><!--Body End -->
+
+ </div>
+
+	<!--Footer Start -->
+	<div id="Footer">
+		<div id="FooterMenu">
+			<div id="FooterMenuContainer">
+				<a href="http://www.dol.gov/dol/foia/main.htm">Freedom of Information Act</a>&nbsp;|&nbsp;
+
+				<a href="http://www.dol.gov/dol/privacynotice.htm">Privacy & Security Statement</a>&nbsp;|&nbsp;
+				<a href="http://www.dol.gov/dol/disclaim.htm">Disclaimers</a>&nbsp;|&nbsp;
+				<a href="http://webapps.dol.gov/feedback/FeedbackSurvey.aspx">Customer Survey</a>&nbsp;|&nbsp;
+				<a href="http://www.dol.gov/dol/aboutdol/website-policies.htm">Important Web Site Notices</a>&nbsp;|&nbsp;
+
+                <a href="http://www.dol.gov/dol/aboutdol/plug-ins.htm">Plug-ins Used by DOL</a>
+			</div>
+		</div>
+	
+		<div id="FooterContact">
+			<div id="FooterContactContainer">
+				U.S. Department of Labor&nbsp;|&nbsp;Frances Perkins Building, 200 Constitution Ave., NW, Washington, DC 20210<br>
+
+				<a href="http://www.dol.gov" style=" text-decoration: underline; ">www.dol.gov</a>&nbsp;|&nbsp;Telephone: 1-866-4-USA-DOL (1-866-487-2365)&nbsp;|&nbsp;TTY: 1-877-889-5627&nbsp;|&nbsp;<u><a href="http://www.dol.gov/dol/contact/index.htm">Contact Us</a></u>
+			</div>
+		</div>
+	</div>
+	<!--Footer End -->
+
+
+</div><!--Main End -->
+  </BODY>
+</HTML>
