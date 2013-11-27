@@ -19,9 +19,9 @@
 
 - (void)dealloc
 {
-    [_detailItem release];
+   /* [_detailItem release];
     [_detailDescriptionLabel release];
-    [super dealloc];
+    [super dealloc]; */
 }
 
 #pragma mark - Managing the detail item
@@ -29,8 +29,8 @@
 - (void)setDetailItem:(id)newDetailItem
 {
     if (_detailItem != newDetailItem) {
-        [_detailItem release];
-        _detailItem = [newDetailItem retain];
+        //[_detailItem release];
+        _detailItem = newDetailItem;
 
         // Update the view.
         [self configureView];

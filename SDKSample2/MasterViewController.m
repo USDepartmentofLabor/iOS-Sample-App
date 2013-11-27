@@ -37,12 +37,12 @@
 							
 - (void)dealloc
 {
-    [arrayOfResults release];
+    /* [arrayOfResults release];
     [dictionaryOfResults release];
     [dataRequest release];
     [_detailViewController release];
     [_objects release];
-    [super dealloc];
+    [super dealloc]; */
 }
 
 - (void)viewDidLoad
@@ -51,7 +51,7 @@
 	// Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
-    UIBarButtonItem *addButton = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)] autorelease];
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
     
     self.title = @"SDK Sample";
@@ -121,7 +121,7 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
 
     //Get the record
@@ -172,7 +172,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (!self.detailViewController) {
-        self.detailViewController = [[[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:nil] autorelease];
+        self.detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:nil];
     }
     NSDate *object = [_objects objectAtIndex:indexPath.row];
     self.detailViewController.detailItem = object;
@@ -184,7 +184,7 @@
 	NSLog(@"Got results");
     
 	//Save results in our local array instance
-	self.arrayOfResults = [resultsArray retain];
+	self.arrayOfResults = resultsArray;
     
 	//Refresh the tableView
 	[self.tableView reloadData];
@@ -194,7 +194,6 @@
 	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:error delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
     
 	[alert show];
-	[alert release];
 }
 
 -(void)govDataRequest:(GOVDataRequest *)request didCompleteWithDictionaryResults:(NSDictionary *)resultsDictionary {
@@ -202,7 +201,7 @@
     
     NSLog(@"Got a Dictionary");
 	//Save results in our local dictionary instance
-	self.dictionaryOfResults = [resultsDictionary retain];
+	self.dictionaryOfResults = resultsDictionary;
     //    NSLog(@"%@", self.dictionaryOfResults);
 	//Refresh the tableView
 	//[self.tableView reloadData];
