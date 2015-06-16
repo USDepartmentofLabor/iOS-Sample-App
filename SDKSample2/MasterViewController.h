@@ -27,8 +27,8 @@
 @property (nonatomic, retain)NSDictionary *dictionaryOfResults;
 
 -(void)govDataRequest:(GOVDataRequest *)request didCompleteWithError:(NSString *)error;
--(void)govDataRequest:(GOVDataRequest *)request didCompleteWithResults:(NSArray *)resultsArray;
--(void)govDataRequest:(GOVDataRequest *)request didCompleteWithDictionaryResults:(NSArray *)resultsDictionary;
-
+-(void)govDataRequest:(GOVDataRequest *)request didCompleteWithResults:(NSArray *)resultsArray andResponseTime:(float)timeInMS;
+-(void)govDataRequest:(GOVDataRequest *)request didCompleteWithDictionaryResults:(NSArray *)resultsDictionary andResponseTime:(float)timeInMS;
+-(void)govDataRequest:(GOVDataRequest *)request didCompleteWithUnParsedResults:(NSString *)resultsString andResponseTime:(float)timeInMS;
 
 @end

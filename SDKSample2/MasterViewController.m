@@ -4,7 +4,7 @@
 //
 //  Created by the U.S. Deparment of Labor
 //  Code available in the public domain
-//
+// .
 
 #import "MasterViewController.h"
 
@@ -70,6 +70,7 @@
 	//Create a dictionary of arguments
 	//Top 20 records; Selected 3 columns.
 	NSDictionary *arguments = [NSDictionary dictionaryWithObjectsAndKeys:@"20", @"top", @"trade_nm,city_nm,st_cd", @"select", nil];
+    //NSDictionary *arguments = [NSDictionary dictionaryWithObjectsAndKeys:nil];
     
 	//Set the timeout.  Set this higher for long-loading APIs
 	int timeOut = 20;
@@ -180,9 +181,9 @@
 }
 
 #pragma mark GOVDataRequest delegate methods
--(void)govDataRequest:(GOVDataRequest *)request didCompleteWithResults:(NSArray *)resultsArray {
-	NSLog(@"Got results");
-    
+-(void)govDataRequest:(GOVDataRequest *)request didCompleteWithResults:(NSArray *)resultsArray andResponseTime:(float)timeInMS {
+	//NSLog(@"Got results");
+    //NSLog(@"%@", resultsArray);
 	//Save results in our local array instance
 	self.arrayOfResults = [resultsArray retain];
     
@@ -197,10 +198,11 @@
 	[alert release];
 }
 
--(void)govDataRequest:(GOVDataRequest *)request didCompleteWithDictionaryResults:(NSDictionary *)resultsDictionary {
+-(void)govDataRequest:(GOVDataRequest *)request didCompleteWithDictionaryResults:(NSDictionary *)resultsDictionary andResponseTime:(float)timeInMS {
     
     
     NSLog(@"Got a Dictionary");
+   // NSLog(@"JSON = %@", resultsDictionary);
 	//Save results in our local dictionary instance
 	self.dictionaryOfResults = [resultsDictionary retain];
     //    NSLog(@"%@", self.dictionaryOfResults);
@@ -208,5 +210,10 @@
 	//[self.tableView reloadData];
 }
 
+-(void)govDataRequest:(GOVDataRequest *)request didCompleteWithUnParsedResults:(NSString *)resultsString andResponseTime:(float)timeInMS {
+    
+    // do something
+    NSLog(@"Got someting");
+}
 
 @end

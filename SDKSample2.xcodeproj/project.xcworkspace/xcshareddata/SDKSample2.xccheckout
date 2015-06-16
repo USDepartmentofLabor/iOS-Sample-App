@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>45D939BB-7898-4D7C-8DC8-9597FCF60411</string>
+	<key>IDESourceControlProjectName</key>
+	<string>SDKSample2</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>7A903ACEADC87E1173BF26AF92DBEB48131A2D82</key>
+		<string>github.com:USDepartmentofLabor/iOS-Sample-App.git</string>
+		<key>FBB43F9CF8F46BB3214D6526E585A8EC60306399</key>
+		<string>github.com:USDepartmentofLabor/DOLDataSDK-iOS.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>SDKSample2.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>7A903ACEADC87E1173BF26AF92DBEB48131A2D82</key>
+		<string>../..</string>
+		<key>FBB43F9CF8F46BB3214D6526E585A8EC60306399</key>
+		<string>../..DOLDataSDK-iOS</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:USDepartmentofLabor/iOS-Sample-App.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>7A903ACEADC87E1173BF26AF92DBEB48131A2D82</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>7A903ACEADC87E1173BF26AF92DBEB48131A2D82</string>
+			<key>IDESourceControlWCCName</key>
+			<string>iOS-Sample-App</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>FBB43F9CF8F46BB3214D6526E585A8EC60306399</string>
+			<key>IDESourceControlWCCName</key>
+			<string>iOS-Sample-AppDOLDataSDK-iOS</string>
+		</dict>
+	</array>
+</dict>
+</plist>
